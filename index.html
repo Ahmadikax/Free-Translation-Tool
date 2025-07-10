@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="rtl-version">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أداة الترجمة - Translation Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>أداة الترجمة المجانية</h1>
+            <h2>Free Translation Tool</h2>
+        </header>
+
+        <main>
+            <div class="translation-box">
+                <div class="language-controls">
+                    <div class="language-selector">
+                        <select id="sourceLanguage">
+                            <option value="auto">تلقائي (Auto Detect)</option>
+                            <option value="ar">العربية (Arabic)</option>
+                            <option value="en">الإنجليزية (English)</option>
+                            <option value="fr">الفرنسية (French)</option>
+                            <option value="es">الإسبانية (Spanish)</option>
+                            <option value="de">الألمانية (German)</option>
+                            <option value="it">الإيطالية (Italian)</option>
+                            <option value="ru">الروسية (Russian)</option>
+                            <option value="zh">الصينية (Chinese)</option>
+                            <option value="ja">اليابانية (Japanese)</option>
+                            <option value="ko">الكورية (Korean)</option>
+                            <option value="tr">التركية (Turkish)</option>
+                            <option value="hi">الهندية (Hindi)</option>
+                            <option value="pt">البرتغالية (Portuguese)</option>
+                            <option value="sq">الألبانية (Albanian)</option>
+                        </select>
+                    </div>
+                    
+                    <button id="swapLanguages" title="تبديل اللغات">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    
+                    <div class="language-selector">
+                        <select id="targetLanguage" multiple size="3">
+                            <option value="en">الإنجليزية (English)</option>
+                            <option value="ar">العربية (Arabic)</option>
+                            <option value="fr">الفرنسية (French)</option>
+                            <option value="es">الإسبانية (Spanish)</option>
+                            <option value="de">الألمانية (German)</option>
+                            <option value="it">الإيطالية (Italian)</option>
+                            <option value="ru">الروسية (Russian)</option>
+                            <option value="zh">الصينية (Chinese)</option>
+                            <option value="ja">اليابانية (Japanese)</option>
+                            <option value="ko">الكورية (Korean)</option>
+                            <option value="tr">التركية (Turkish)</option>
+                            <option value="hi">الهندية (Hindi)</option>
+                            <option value="pt">البرتغالية (Portuguese)</option>
+                            <option value="sq">الألبانية (Albanian)</option>
+                        </select>
+                        <small>اضغط Ctrl للاختيار المتعدد (Hold Ctrl for multiple)</small>
+                    </div>
+                </div>
+
+                <div class="text-areas">
+                    <div class="input-area">
+                        <textarea id="sourceText" placeholder="أدخل النص للترجمة هنا..."></textarea>
+                        <div class="controls">
+                            <button id="clearSource" title="مسح النص">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <button id="copySource" title="نسخ النص">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="output-area">
+                        <textarea id="translatedText" placeholder="الترجمة ستظهر هنا..." readonly></textarea>
+                        <div class="controls">
+                            <button id="copyTranslation" title="نسخ الترجمة">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="translation-controls">
+                    <button id="translateBtn" class="primary-btn">ترجم</button>
+                    <div class="service-selector">
+                        <label for="translationService">خدمة الترجمة:</label>
+                        <select id="translationService">
+                            <option value="google">Google Translate</option>
+                            <option value="mymemory">MyMemory</option>
+                            <option value="microsoft">Microsoft Translator</option>
+                            <option value="deepl">DeepL</option>
+                            <option value="all">جميع الخدمات</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="results" class="results-container">
+                    <!-- Translation results from different services will appear here -->
+                </div>
+                
+                <div id="multiTargetResults" class="multi-target-results">
+                    <!-- Results for multiple target languages will appear here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>تم إنشاء هذه الأداة لأغراض تعليمية فقط. تستخدم واجهات برمجة تطبيقات مجانية للترجمة.</p>
+            <p>This tool was created for educational purposes only. It uses free translation APIs.</p>
+            <div class="language-switch">
+                <a href="index.html" class="active">العربية</a> |
+                <a href="index_en.html">English</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
